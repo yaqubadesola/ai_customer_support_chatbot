@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import gradio.components; import inspect; sig = inspect.signature\\(gradio.components.Chatbot.__init__\\); print\\(list\\(sig.parameters.keys\\(\\)\\)\\)\")",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('app.py', doraise=True\\); print\\('OK'\\)\")",
+      "Bash(timeout 15 python app.py)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('app.py', doraise=True\\); py_compile.compile\\('src/engine.py', doraise=True\\); py_compile.compile\\('src/mcp_client.py', doraise=True\\); print\\('OK'\\)\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ]
+  }
+}
